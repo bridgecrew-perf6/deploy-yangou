@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+body{
+    font-family: sans-serif;
+    font-style: 16px;
+    background: #290B2D;
+    font-family: 'Roboto', sans-serif;
+}
+
+img{
+    height: 100%;
+    width: auto;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    color: #2968D2;
+}
+
+h1 span{
+    display: block;
+    font-size: 60%;
+}
+
+.sub{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.page{
+    font-size: 0;
+    text-align: center;
+    background: #f6f6f6;
+    background-image: url('../img/ooo.jpg');
+    background-position: top center;
+    background-size: cover;
+    padding-top: 200px;
+}
+
+.logo{
+    display: block;
+    position: relative;
+    width: 300px;
+    margin: auto;
+}
+
+.photo{
+    position: relative;
+    display: block;
+    margin: 30px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+    width: 400px;
+}
+
+.card{
+    display: inline-block;
+    height: 260px;
+    width: 260px;
+    background: rgba(255, 255, 255, 0.7 );
+    font-size: 10px;
+    vertical-align: top;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card .title{
+    
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.card .image {
+    display: block;
+    position: relative;
+    height: 120px;
+}
+.card .image img{
+    display: block;
+    position: relative;
+    height: 100%;
+    margin: auto;
+
+}
+
+.card .description {
+    text-align: left;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.card .description ul{
+    margin-top: 5px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+
+
+
+
+
+footer{
+    margin-top: 20px;
+    padding: 30px;
+    background: #AAF376;
+    color: #290B2D;
+}
+
+footer a{
+    margin: 0;
+    position: relative;
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    height: 70px;
+    width: 70px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #3B7231;
+    background: #5FBB3C;
+    
+
+}
+
+
+footer a:hover{
+    filter: brightness(120%);
+}
+
+
+
+
+
+
+
+
+
+
+pre{
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 50px;
+    display: table;
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+

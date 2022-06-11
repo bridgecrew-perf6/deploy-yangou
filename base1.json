@@ -1,0 +1,93 @@
+[
+    {
+        "model": "website.character",
+        "pk": 1,
+        "fields": {
+            "name": "Finn",
+            "age": 17,
+            "description": "Te voy a dar tus pataditas/ ¡Ay, mi manicure!/ Jake, ¿qué pashú?/ ¡Algebraico!",
+            "image": "website/characters/Finn_with_bionic_arm-0.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 2,
+        "fields": {
+            "name": "Jake",
+            "age": 34,
+            "description": "Hay como dicen por ahí, ¡Ua ua! / Hermano, ¡súbete a mi lomo! / Tenga para que se entretenga",
+            "image": "website/characters/JakeRJS.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 3,
+        "fields": {
+            "name": "Rey Helado",
+            "age": 1044,
+            "description": "Diversión es mi segundo nombre/ Hazlo o te convierto en jugo!/ ¡Soy una banana!",
+            "image": "website/characters/Rei_Gelado.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 4,
+        "fields": {
+            "name": "Dulce Princesa",
+            "age": 827,
+            "description": "Esos son celos, cariño",
+            "image": "website/characters/Princess_bubblegum_in_dress_special_alarm_color.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 5,
+        "fields": {
+            "name": "Marceline",
+            "age": 1005,
+            "description": "Oye Finn, quiero que estrangules a unos duendes/ Hola lenta Princesa/ Pero sin lengua",
+            "image": "website/characters/Marcysuit_PrincessDay.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 6,
+        "fields": {
+            "name": "BMO",
+            "age": 1000,
+            "description": "¿Quien quiere jugar vídeojuegos?/ Batería baja... Apagando",
+            "image": "website/characters/BMOGAME.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 7,
+        "fields": {
+            "name": "Princesa Grumosa",
+            "age": 15,
+            "description": "¡Lo que sea, 2008!/¡Dije que te calles, mamá!/ ¡Cuanto los odio!/ ¡Quítame tus manos, dona depravada!",
+            "image": "website/characters/Lumpy_Space.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 8,
+        "fields": {
+            "name": "Arcoiris",
+            "age": 18,
+            "description": "Go-ma-wo/ Ja-reo ga-ya-getda/ Maj-a/ Nu-gu-se-yo?",
+            "image": "website/characters/LadyRainicorn.webp"
+        }
+    },
+    {
+        "model": "website.character",
+        "pk": 9,
+        "fields": {
+            "name": "patty",
+            "age": 15,
+            "description": "full stack python",
+            "image": "website/characters/LadyRainicorn.webp"
+        }
+    }
+
+]

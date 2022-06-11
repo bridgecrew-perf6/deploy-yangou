@@ -1,0 +1,138 @@
+{% load static %}
+{% load web_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="{% static '/website/css/style.css' %}">
+</head>
+<body>
+
+
+
+    <pre>
+<h1>DEPLOY DJANGO EN HEROKU <span>11 pasos</span></h1>    
+<p class="sub">BASADO EN: <a href="https://www.youtube.com/watch?v=Jb1NcPdN34k">https://www.youtube.com/watch?v=Jb1NcPdN34k</a></p>
+    
+
+<h2>1. Instalar 'HEROKU CLI'</h2>
+    instrucciones                       <a href="https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli">https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli</a>
+        
+<h2>2. En 'consola'</h2>
+    instalar                            pip install gunicorn
+        
+<h2>3. En 'settings.py'</h2>
+    # agregar:
+
+    DEBUG = False                       # Para ver archivos en carpeta 'media' dejar en True
+    
+    ALLOWED_HOSTS = ['*']
+        
+    import os
+        
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_TMP = os.path.join(BASE_DIR, 'static')
+    STATIC_URL = '/static/'
+        
+    os.makedirs(STATIC_TMP, exist_ok=True)
+    os.makedirs(STATIC_ROOT, exist_ok=True)
+        
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+        
+<h2>4. En 'consola'</h2>
+        
+    instalar                            pip install whitenoise
+                
+<h2>5. En 'settings.py'</h2>  
+    # en middleware agregar:
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
+    # al final:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+    
+<h2>6. En 'urls.py'</h2>
+    # agregar:
+
+    from django.conf import settings
+    
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', include('website.urls')),
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+<h2>7. En Raíz</h2>
+    crear carpeta                       'static'
+    crear adentro el archivo            '.keep'
+                
+<h2>8. En 'consola'</h2>
+    crear archivos staticos             python manage.py collectstatic --noinput
+    crear archivo para instalar         pip freeze > requirements.txt
+
+<h2>9. En Raíz</h2>
+    crear archivo 'Procfile' con:       web: gunicorn aqui_nombre_del_proyecto.wsgi --log-file -
+
+<h2>10. En 'consola'</h2>
+    eliminar Pipfile si se usa Pipenv
+        
+    loguearse                           heroku login
+        
+    iniciar repo                        git init
+    agregar cambios                     git add .
+    hacer commit                        git commit -am "make it better"
+        
+    conectar con heroku                 heroku git:remote -a proyecto
+    verificar conexión                  git remote -v
+        
+    subir cambios                       git push heroku master
+        
+    para ver en local                   heroku local
+    url para ver                        http://0.0.0.0:5000/
+
+<h2>11. En 'cosola' (para actualizar)</h2>
+    agregar cambios                     git add .
+    hacer commit                        git commit -am "make it better"
+    subir cambios                       git push heroku main
+</pre>
+
+
+    <div class="page">
+
+    <img src="{% static '/website/img/logo.png' %}" alt="logo" class="logo">
+    
+    
+
+    {% for item in characters%}
+
+    <div class="card">
+        <div class="title">
+            <p>{{item.name}}</p>
+        </div>
+        <div class="image">    
+            <img src="media/{{ item.image }}"/>
+        </div>
+        <div class="description">
+            <p>Edad: {{item.age}}</p>
+            <p>Frases:</p>
+            <ul>
+                {% with item.description|split:'/' as strs %}
+                {% for str in strs %}
+                <li>{{str}}</li>
+                {% endfor %}
+                {% endwith %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+
+    <footer>
+        <a href="admin/">Admin</a>
+    </footer>
+</body>
+</html>
